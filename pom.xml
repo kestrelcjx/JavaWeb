@@ -26,6 +26,43 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <version>0.0.1-SNAPSHOT</version>
     </properties>
+    
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.kestrelcjx</groupId>
+                <artifactId>javaweb-admin</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kestrelcjx</groupId>
+                <artifactId>javaweb-common</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kestrelcjx</groupId>
+                <artifactId>javaweb-generator</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kestrelcjx</groupId>
+                <artifactId>javaweb-quartz</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kestrelcjx</groupId>
+                <artifactId>javaweb-system</artifactId>
+                <version>${version}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.62</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>
