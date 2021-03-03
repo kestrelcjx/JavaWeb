@@ -11,7 +11,7 @@
     
     <artifactId>javaweb-quartz</artifactId>
     <packaging>jar</packaging>
-    <name>javaweb-admin</name>
+    <name>javaweb-quartz</name>
     
     <dependencies>
         <dependency>

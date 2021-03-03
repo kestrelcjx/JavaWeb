@@ -11,6 +11,6 @@
     
     <artifactId>javaweb-generator</artifactId>
     <packaging>jar</packaging>
-    <name>javaweb-admin</name>
+    <name>javaweb-generator</name>
     
 </project>

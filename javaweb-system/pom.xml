@@ -11,6 +11,6 @@
     
     <artifactId>javaweb-system</artifactId>
     <packaging>jar</packaging>
-    <name>javaweb-admin</name>
+    <name>javaweb-system</name>
     
 </project>

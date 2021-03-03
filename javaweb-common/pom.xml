@@ -11,7 +11,7 @@
     
     <artifactId>javaweb-common</artifactId>
     <packaging>jar</packaging>
-    <name>javaweb-admin</name>
+    <name>javaweb-common</name>
     
     <!--依赖声明-->
     <dependencies>
