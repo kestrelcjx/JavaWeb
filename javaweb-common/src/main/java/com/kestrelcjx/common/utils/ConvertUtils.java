@@ -11,7 +11,7 @@ import java.util.Set;
 /**
  * 类型转换器
  */
-public class ConvertUtil {
+public class ConvertUtils {
     /**
      * 转换为String<br>
      * 如果给定的值为null，或者转换失败，返回默认值<br>

@@ -37,7 +37,7 @@ public class StrFormatter {
                     if (delimIndex > 1 && strPattern.charAt(delimIndex - 2) == C_BACKSLASH) {
                         // 占位符前有两个转义符，占位符有效
                         builder.append(strPattern, handledPosition, delimIndex - 1);
-                        builder.append(ConvertUtil.utf8Str(argArray[argIndex]));
+                        builder.append(ConvertUtils.utf8Str(argArray[argIndex]));
                         handledPosition = delimIndex + 2;
                     } else {
                         // 占位符前有一个转义符，占位符无效
@@ -49,7 +49,7 @@ public class StrFormatter {
                 } else {
                     // 占位符前无转义符，起正常占位作用
                     builder.append(strPattern, handledPosition, delimIndex);
-                    builder.append(ConvertUtil.utf8Str(argArray[argIndex]));
+                    builder.append(ConvertUtils.utf8Str(argArray[argIndex]));
                     handledPosition = delimIndex + 2;
                 }
             }
