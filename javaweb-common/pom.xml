@@ -15,6 +15,12 @@
     
     <!--依赖声明-->
     <dependencies>
+        <!--测试依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
         <!--mybatis-plus依赖-->
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -84,5 +90,5 @@
         <!--JWT依赖-->
         <!--二维码生成依赖-->
     </dependencies>
-    
+
 </project>

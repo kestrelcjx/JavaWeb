@@ -13,4 +13,11 @@
     <packaging>jar</packaging>
     <name>javaweb-system</name>
     
+    <dependencies>
+        <dependency>
+            <groupId>com.kestrelcjx</groupId>
+            <artifactId>javaweb-common</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>
