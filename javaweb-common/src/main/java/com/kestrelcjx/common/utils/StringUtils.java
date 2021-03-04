@@ -312,7 +312,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
      * 如果转换前的字符串为空，则返回空字符串。<br>
      * 例如：HELLO_WORLD -> HelloWorld
      *
-     * @param name 被转换的转发创
+     * @param name 被转换的字符串
      * @return 结果
      */
     public static String convertToCamelCase(String name) {
@@ -353,6 +353,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
                 upperCase = true;
             } else if (upperCase) {
                 builder.append(Character.toUpperCase(c));
+                upperCase = false;
             } else {
                 builder.append(c);
             }
