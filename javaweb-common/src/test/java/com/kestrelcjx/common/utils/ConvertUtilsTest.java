@@ -2,7 +2,7 @@ package com.kestrelcjx.common.utils;
 
 import org.junit.Test;
 
-public class ConvertUtilTest {
+public class ConvertUtilsTest {
     @Test
     public void testSBC() {
         assert "｀～＠＃＄％＾＆＊（）＿＋［］｛｝＼｜；＇：＂＜＞，．？／"
