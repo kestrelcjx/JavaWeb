@@ -90,6 +90,10 @@
             <version>4.1.0</version>
         </dependency>
         <!--邮件发送依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
         <!--thymeleaf模板引擎依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
