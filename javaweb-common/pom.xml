@@ -98,6 +98,11 @@
         <!--极光推送依赖-->
         <!--文件压缩、解压缩依赖-->
         <!--JWT依赖-->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
+        </dependency>
         <!--二维码生成依赖-->
     </dependencies>
 
