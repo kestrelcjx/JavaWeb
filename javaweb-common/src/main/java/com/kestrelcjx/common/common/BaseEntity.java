@@ -3,10 +3,12 @@ package com.kestrelcjx.common.common;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.ser.Serializers;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * 基类实体对象
@@ -101,5 +103,59 @@ public class BaseEntity implements Serializable {
                 ", updateTime=" + updateTime +
                 ", mark=" + mark +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (!(o instanceof BaseEntity)) {
+            return false;
+        }
+        BaseEntity other = (BaseEntity) o;
+        if (!other.canEqual((Object) this)) {
+            return false;
+        }
+        if (this.getId() == null ? other.getId() != null
+                : Integer.compare(this.getId(), other.getId()) != 0) {
+            return false;
+        }
+        if (this.getCreateUser() == null ? other.getCreateUser() != null
+                : Integer.compare(this.getCreateUser(), other.getCreateUser()) != 0) {
+            return false;
+        }
+        if (!Objects.equals(this.getCreateTime(), other.getCreateTime())) {
+            return false;
+        }
+        if (this.getUpdateUser() == null ? other.getUpdateUser() != null
+                : Integer.compare(this.getUpdateUser(), other.getUpdateUser()) != 0) {
+            return false;
+        }
+        if (!Objects.equals(this.getUpdateTime(), other.getUpdateTime())) {
+            return false;
+        }
+        if (this.getMark() == null ? other.getMark() != null
+                : Integer.compare(this.getMark(), other.getMark()) != 0) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int PRIME = 59;
+        int result = 1;
+        result = (result * PRIME) + (this.getId() == null ? 43 : this.getId().hashCode());
+        result = (result * PRIME) + (this.getCreateUser() == null ? 43 : this.getCreateUser().hashCode());
+        result = (result * PRIME) + (this.getCreateTime() == null ? 43 : this.getCreateTime().hashCode());
+        result = (result * PRIME) + (this.getUpdateUser() == null ? 43 : this.getUpdateUser().hashCode());
+        result = (result * PRIME) + (this.getUpdateTime() == null ? 43 : this.getUpdateTime().hashCode());
+        result = (result * PRIME) + (this.getMark() == null ? 43 : this.getMark().hashCode());
+        return result;
+    }
+
+    protected boolean canEqual(Object other) {
+        return other instanceof BaseEntity;
     }
 }
