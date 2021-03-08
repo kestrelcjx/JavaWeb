@@ -90,4 +90,16 @@ public class BaseEntity implements Serializable {
     public void setMark(Integer mark) {
         this.mark = mark;
     }
+
+    @Override
+    public String toString() {
+        return "BaseEntity{" +
+                "id=" + id +
+                ", createUser=" + createUser +
+                ", createTime=" + createTime +
+                ", updateUser=" + updateUser +
+                ", updateTime=" + updateTime +
+                ", mark=" + mark +
+                '}';
+    }
 }
