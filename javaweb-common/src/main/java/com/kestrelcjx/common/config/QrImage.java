@@ -66,32 +66,39 @@ public class QrImage {
 
         }
 
-        public void qrCodeContent(String qrCodeContent) {
+        public QrImage.QrImageBuilder qrCodeContent(String qrCodeContent) {
             this.qrCodeContent = qrCodeContent;
+            return this;
         }
 
-        public void qrCodeWidth(Integer qrCodeWidth) {
+        public QrImage.QrImageBuilder qrCodeWidth(Integer qrCodeWidth) {
             this.qrCodeWidth = qrCodeWidth;
+            return this;
         }
 
-        public void qrCodeHeight(Integer qrCodeHeight) {
+        public QrImage.QrImageBuilder qrCodeHeight(Integer qrCodeHeight) {
             this.qrCodeHeight = qrCodeHeight;
+            return this;
         }
 
-        public void embeddedImgFilePath(String embeddedImgFilePath) {
+        public QrImage.QrImageBuilder embeddedImgFilePath(String embeddedImgFilePath) {
             this.embeddedImgFilePath = embeddedImgFilePath;
+            return this;
         }
 
-        public void wordSize(Integer wordSize) {
+        public QrImage.QrImageBuilder wordSize(Integer wordSize) {
             this.wordSize = wordSize;
+            return this;
         }
 
-        public void wordContent(String wordContent) {
+        public QrImage.QrImageBuilder wordContent(String wordContent) {
             this.wordContent = wordContent;
+            return this;
         }
 
-        public void qrCodeFileOutputPath(String qrCodeFileOutputPath) {
+        public QrImage.QrImageBuilder qrCodeFileOutputPath(String qrCodeFileOutputPath) {
             this.qrCodeFileOutputPath = qrCodeFileOutputPath;
+            return this;
         }
 
         public QrImage build() {
