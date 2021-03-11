@@ -201,7 +201,7 @@ public class Ad extends BaseEntity {
 
     @Override
     public String toString() {
-        return "Ad{" +
+        return "Ad(" +
                 "title='" + title + '\'' +
                 ", sortId=" + sortId +
                 ", cover='" + cover + '\'' +
@@ -216,7 +216,7 @@ public class Ad extends BaseEntity {
                 ", viewNum=" + viewNum +
                 ", status=" + status +
                 ", sort=" + sort +
-                '}';
+                ')';
     }
 
     @Override

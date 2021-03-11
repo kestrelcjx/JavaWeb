@@ -442,7 +442,7 @@ public class Admin implements Serializable {
 
     @Override
     public String toString() {
-        return "Admin{" +
+        return "Admin(" +
                 "id=" + id +
                 ", realname='" + realname + '\'' +
                 ", nickname='" + nickname + '\'' +
@@ -477,7 +477,7 @@ public class Admin implements Serializable {
                 ", updateUser=" + updateUser +
                 ", updateTime=" + updateTime +
                 ", mark=" + mark +
-                '}';
+                ')';
     }
 
     public boolean equals(final Object o) {
