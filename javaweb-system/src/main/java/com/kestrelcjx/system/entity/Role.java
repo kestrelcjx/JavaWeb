@@ -86,16 +86,16 @@ public class Role extends BaseEntity {
         if (!super.equals(o)) {
             return false;
         }
-        if (this.getName() == null ? other.getName() != null : !this.name.equals(other.name)) {
+        if (this.getName() == null ? other.getName() != null : !this.getName().equals(other.getName())) {
             return false;
         }
-        if (this.getRules() == null ? other.getRules() != null : !this.rules.equals(other.rules)) {
+        if (this.getRules() == null ? other.getRules() != null : !this.getRules().equals(other.getRules())) {
             return false;
         }
-        if (this.getStatus() == null ? other.getStatus() != null : !this.status.equals(other.status)) {
+        if (this.getStatus() == null ? other.getStatus() != null : !this.getStatus().equals(other.getStatus())) {
             return false;
         }
-        if (Integer.compare(this.getSort(), other.getSort()) != 0) {
+        if (this.getSort() == null ? other.getSort() != null : !this.getSort().equals(other.getSort())) {
             return false;
         }
         return true;
