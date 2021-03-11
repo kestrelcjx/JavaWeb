@@ -3,6 +3,9 @@ package com.kestrelcjx.system.entity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.kestrelcjx.common.common.BaseEntity;
 
+/**
+ * 人员角色关系
+ */
 @TableName("sys_admin_role")
 public class AdminRole extends BaseEntity {
     /**
