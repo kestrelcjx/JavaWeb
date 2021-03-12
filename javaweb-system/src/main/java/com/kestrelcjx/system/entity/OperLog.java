@@ -27,7 +27,7 @@ public class OperLog extends BaseEntity {
     /**
      * 操作类型：0=其它，1=后台用户，2=手机端用户
      */
-    private Integer operatorTypes;
+    private Integer operatorType;
     /**
      * 操作人员
      */
@@ -80,8 +80,8 @@ public class OperLog extends BaseEntity {
         return this.requestMethod;
     }
 
-    public Integer getOperatorTypes() {
-        return this.operatorTypes;
+    public Integer getOperatorType() {
+        return this.operatorType;
     }
 
     public String getOperName() {
@@ -136,8 +136,8 @@ public class OperLog extends BaseEntity {
         return this;
     }
 
-    public OperLog setOperatorTypes(Integer operatorTypes) {
-        this.operatorTypes = operatorTypes;
+    public OperLog setOperatorType(Integer operatorType) {
+        this.operatorType = operatorType;
         return this;
     }
 
@@ -187,7 +187,7 @@ public class OperLog extends BaseEntity {
                 ", businessType=" + this.getBusinessType() +
                 ", method=" + this.getMethod() +
                 ", requestMethod=" + this.getRequestMethod() +
-                ", operatorTypes=" + this.getOperatorTypes() +
+                ", operatorTypes=" + this.getOperatorType() +
                 ", operName=" + this.getOperName() +
                 ", operUrl=" + this.getOperUrl() +
                 ", operIp=" + this.getOperIp() +
@@ -215,8 +215,8 @@ public class OperLog extends BaseEntity {
         if (this.getRequestMethod() == null ? other.getRequestMethod() != null :
                 !this.getRequestMethod().equals(other.getRequestMethod()))
             return false;
-        if (this.getOperatorTypes() == null ? other.getOperatorTypes() != null :
-                !this.getOperatorTypes().equals(other.getOperatorTypes()))
+        if (this.getOperatorType() == null ? other.getOperatorType() != null :
+                !this.getOperatorType().equals(other.getOperatorType()))
             return false;
         if (this.getOperName() == null ? other.getOperName() != null :
                 !this.getOperName().equals(other.getOperName())) return false;
@@ -250,7 +250,7 @@ public class OperLog extends BaseEntity {
         result = result * PRIME + (this.getBusinessType() == null ? 43 : this.getBusinessType().hashCode());
         result = result * PRIME + (this.getMethod() == null ? 43 : this.getMethod().hashCode());
         result = result * PRIME + (this.getRequestMethod() == null ? 43 : this.getRequestMethod().hashCode());
-        result = result * PRIME + (this.getOperatorTypes() == null ? 43 : this.getOperatorTypes().hashCode());
+        result = result * PRIME + (this.getOperatorType() == null ? 43 : this.getOperatorType().hashCode());
         result = result * PRIME + (this.getOperName() == null ? 43 : this.getOperName().hashCode());
         result = result * PRIME + (this.getOperUrl() == null ? 43 : this.getOperUrl().hashCode());
         result = result * PRIME + (this.getOperIp() == null ? 43 : this.getOperIp().hashCode());
