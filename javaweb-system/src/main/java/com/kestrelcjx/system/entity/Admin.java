@@ -31,7 +31,7 @@ public class Admin implements Serializable {
     /**
      * 性别：1=男，2=女，3=保密
      */
-    private String gender;
+    private Integer gender;
     /**
      * 头像
      */
@@ -192,11 +192,11 @@ public class Admin implements Serializable {
         this.nickname = nickname;
     }
 
-    public String getGender() {
+    public Integer getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Integer gender) {
         this.gender = gender;
     }
 
