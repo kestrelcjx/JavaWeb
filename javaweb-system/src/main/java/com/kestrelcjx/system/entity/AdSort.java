@@ -19,7 +19,7 @@ public class AdSort extends BaseEntity {
     /**
      * 站点ID
      */
-    private String itemId;
+    private Integer itemId;
     /**
      * 栏目ID
      */
@@ -48,7 +48,7 @@ public class AdSort extends BaseEntity {
         return this.note;
     }
 
-    public String getItemId() {
+    public Integer getItemId() {
         return this.itemId;
     }
 
@@ -78,7 +78,7 @@ public class AdSort extends BaseEntity {
         return this;
     }
 
-    public AdSort setItemId(String itemId) {
+    public AdSort setItemId(Integer itemId) {
         this.itemId = itemId;
         return this;
     }
