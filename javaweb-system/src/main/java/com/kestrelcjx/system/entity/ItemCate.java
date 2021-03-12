@@ -6,7 +6,7 @@ import com.kestrelcjx.common.common.BaseEntity;
 /**
  * 栏目
  */
-@TableName("sys__item__cate")
+@TableName("sys_item_cate")
 public class ItemCate extends BaseEntity {
     /**
      * 栏目名称
