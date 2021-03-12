@@ -71,6 +71,11 @@
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
         <!--UserAgent工具类-->
+        <dependency>
+            <groupId>eu.bitwalker</groupId>
+            <artifactId>UserAgentUtils</artifactId>
+            <version>1.20</version>
+        </dependency>
         <!--Excel依赖-->
         <dependency>
             <groupId>com.alibaba</groupId>
