@@ -15,7 +15,7 @@ public class Dep extends BaseEntity {
     /**
      * 上级ID
      */
-    private String pid;
+    private Integer pid;
     /**
      * 类型：1=公司，2=部门
      */
@@ -36,7 +36,7 @@ public class Dep extends BaseEntity {
         return this.name;
     }
 
-    public String getPid() {
+    public Integer getPid() {
         return this.pid;
     }
 
@@ -57,7 +57,7 @@ public class Dep extends BaseEntity {
         return this;
     }
 
-    public Dep setPid(String pid) {
+    public Dep setPid(Integer pid) {
         this.pid = pid;
         return this;
     }
