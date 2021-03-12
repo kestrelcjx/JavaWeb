@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 菜单
  */
-@TableName
+@TableName("sys_menu")
 public class Menu extends BaseEntity {
     /**
      * 菜单名称
