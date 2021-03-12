@@ -19,7 +19,7 @@ public class Role extends BaseEntity {
     /**
      * 状态：1=正常，2=禁用
      */
-    private String status;
+    private Integer status;
     /**
      * 排序
      */
@@ -43,11 +43,11 @@ public class Role extends BaseEntity {
         return this;
     }
 
-    public String getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public Role setStatus(String status) {
+    public Role setStatus(Integer status) {
         this.status = status;
         return this;
     }
