@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kestrelcjx.system.mapper.MenuMapper">
+    <!--获取人员菜单权限列表-->
+    <select id="getMenuListByAdminId" resultType="com.kestrelcjx.system.entity.Menu">
+        select *
+        from sys_menu
+        where id in(
+            select menu_id
+            from sys_role_menu
+            where role_id in(
+                select id
+                from sys_admin_role
+                where admin_id=#{adminId} and mark=1
+            ) and mark=1
+        ) and mark=1
+        order by sort asc;
+    </select>
+    
+    <!--获取导航菜单-->
+    <select id="getNavbarMenu" resultType="com.kestrelcjx.system.vo.MenuListVo">
+        select m.*
+        from sys_menu as m inner join sys_role_menu as r
+        on m.id=r.menu.id
+        where r.role_id in(#{roleIds}) and m.status=1 and m.mark=1 and r.mark=1 and m.pid=#{pid}
+        group by m.id
+        order by m.sort asc;
+    </select>
+</mapper>
