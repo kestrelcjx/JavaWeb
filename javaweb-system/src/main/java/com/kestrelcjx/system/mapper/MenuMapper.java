@@ -17,7 +17,7 @@ public interface MenuMapper extends BaseMapper<Menu> {
      * @param adminId 人员ID
      * @return
      */
-    List<Menu> getMenuListByAmdinId(@Param("adminId") Integer adminId);
+    List<Menu> getMenuListByAdminId(@Param("adminId") Integer adminId);
 
     /**
      * 获取导航菜单
