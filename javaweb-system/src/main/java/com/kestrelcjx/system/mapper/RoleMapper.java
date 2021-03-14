@@ -16,5 +16,5 @@ public interface RoleMapper extends BaseMapper<Role> {
      * @param adminId 人员ID
      * @return
      */
-    List<Role> getRoleListByAdmin(@Param("adminId") Integer adminId);
+    List<Role> getRoleListByAdminId(@Param("adminId") Integer adminId);
 }
