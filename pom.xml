@@ -19,8 +19,6 @@
     <modules>
         <module>javaweb-admin</module>
         <module>javaweb-common</module>
-        <module>javaweb-generator</module>
-        <module>javaweb-quartz</module>
         <module>javaweb-system</module>
     </modules>
 
