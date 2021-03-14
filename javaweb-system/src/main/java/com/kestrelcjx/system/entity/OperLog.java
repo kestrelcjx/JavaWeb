@@ -43,7 +43,7 @@ public class OperLog extends BaseEntity {
     /**
      * 操作地点
      */
-    private String operLocaotion;
+    private String operLocation;
     /**
      * 请求参数
      */
@@ -96,8 +96,8 @@ public class OperLog extends BaseEntity {
         return this.operIp;
     }
 
-    public String getOperLocaotion() {
-        return this.operLocaotion;
+    public String getOperLocation() {
+        return this.operLocation;
     }
 
     public String getOperParam() {
@@ -156,8 +156,8 @@ public class OperLog extends BaseEntity {
         return this;
     }
 
-    public OperLog setOperLocaotion(String operLocaotion) {
-        this.operLocaotion = operLocaotion;
+    public OperLog setOperLocation(String operLocation) {
+        this.operLocation = operLocation;
         return this;
     }
 
@@ -191,7 +191,7 @@ public class OperLog extends BaseEntity {
                 ", operName=" + this.getOperName() +
                 ", operUrl=" + this.getOperUrl() +
                 ", operIp=" + this.getOperIp() +
-                ", operLocaotion=" + this.getOperLocaotion() +
+                ", operLocaotion=" + this.getOperLocation() +
                 ", operParam=" + this.getOperParam() +
                 ", jsonResult=" + this.getJsonResult() +
                 ", status=" + this.getStatus() +
@@ -224,8 +224,8 @@ public class OperLog extends BaseEntity {
             return false;
         if (this.getOperIp() == null ? other.getOperIp() != null : !this.getOperIp().equals(other.getOperIp()))
             return false;
-        if (this.getOperLocaotion() == null ? other.getOperLocaotion() != null :
-                !this.getOperLocaotion().equals(other.getOperLocaotion()))
+        if (this.getOperLocation() == null ? other.getOperLocation() != null :
+                !this.getOperLocation().equals(other.getOperLocation()))
             return false;
         if (this.getOperParam() == null ? other.getOperParam() != null :
                 !this.getOperParam().equals(other.getOperParam())) return false;
@@ -254,7 +254,7 @@ public class OperLog extends BaseEntity {
         result = result * PRIME + (this.getOperName() == null ? 43 : this.getOperName().hashCode());
         result = result * PRIME + (this.getOperUrl() == null ? 43 : this.getOperUrl().hashCode());
         result = result * PRIME + (this.getOperIp() == null ? 43 : this.getOperIp().hashCode());
-        result = result * PRIME + (this.getOperLocaotion() == null ? 43 : this.getOperLocaotion().hashCode());
+        result = result * PRIME + (this.getOperLocation() == null ? 43 : this.getOperLocation().hashCode());
         result = result * PRIME + (this.getOperParam() == null ? 43 : this.getOperParam().hashCode());
         result = result * PRIME + (this.getJsonResult() == null ? 43 : this.getJsonResult().hashCode());
         result = result * PRIME + (this.getStatus() == null ? 43 : this.getStatus().hashCode());

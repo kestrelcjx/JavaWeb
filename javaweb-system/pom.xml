@@ -44,11 +44,11 @@
             <artifactId>thymeleaf-layout-dialect</artifactId>
         </dependency>
         <!--二维码依赖-->
-        <!--临时-->
+        <!--验证码依赖-->
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
+            <groupId>com.github.whvcse</groupId>
+            <artifactId>easy-captcha</artifactId>
+            <version>1.6.2</version>
         </dependency>
     </dependencies>
 
