@@ -4,6 +4,8 @@ use `javaweb`;
 
 set foreign_key_checks = 0;
 
+drop table if exists `sys_ad`;
+
 create table `sys_ad`(
     `title` varchar(64),
     `sort_id` int(11),
@@ -21,6 +23,8 @@ create table `sys_ad`(
     `sort` int(11)
 );
 
+drop table if exists `sys_admin`;
+
 create table `sys_admin`(
     `id` int(11) primary key,
     `realname` varchar(64),
@@ -34,7 +38,7 @@ create table `sys_admin`(
     `dept_id` int(11),
     `level_id` int(11),
     `position_id` int(11),
-    `province_id` int（11),
+    `province_id` int(11),
     `city_id` int(11),
     `district_id` int(11),
     `address` varchar(64),
@@ -58,10 +62,14 @@ create table `sys_admin`(
     `mark` int(11)
 );
 
+drop table if exists `sys_admin_role`;
+
 create table `sys_admin_role`(
     `admin_id` int(11),
     `role_id` int(11)
 );
+
+drop table if exists `sys_ad_sort`;
 
 create table `sys_ad_sort`(
     `name` varchar(64),
@@ -72,6 +80,8 @@ create table `sys_ad_sort`(
     `platform` int(11),
     `sort` int(11)
 );
+
+drop table if exists `sys_city`;
 
 create table `sys_city`(
     `name` varchar(64),
@@ -85,6 +95,8 @@ create table `sys_city`(
     `sort` int(11)
 );
 
+drop table if exists `sys_config`;
+
 create table `sys_config`(
     `title` varchar(64),
     `tag` varchar(64),
@@ -97,10 +109,14 @@ create table `sys_config`(
     `note` varchar(64)
 );
 
+drop table if exists `sys_config_group`;
+
 create table `sys_config_group`(
     `name` varchar(64),
     `sort` int(11)
 );
+
+drop table if exists `sys_crontab`;
 
 create table `sys_crontab`(
     `title` varchar(64),
@@ -112,6 +128,8 @@ create table `sys_crontab`(
     `note` varchar(64)
 );
 
+drop table if exists `sys_dep`;
+
 create table `sys_dep`(
     `name` varchar(64),
     `pid` int(11),
@@ -119,6 +137,8 @@ create table `sys_dep`(
     `has_child` int(11),
     `sort` int(11)
 );
+
+drop table if exists `sys_dic`;
 
 create table `sys_dic`(
     `title` varchar(64),
@@ -130,11 +150,15 @@ create table `sys_dic`(
     `sort` int(11)
 );
 
+drop table if exists `sys_dic_type`;
+
 create table `sys_dic_type`(
     `name` varchar(64),
     `tag` varchar(64),
     `sort` int(11)
 );
+
+drop table if exists `sys_item`;
 
 create table `sys_item`(
     `name` varchar(64),
@@ -146,6 +170,8 @@ create table `sys_item`(
     `note` varchar(64),
     `sort` int(11)
 );
+
+drop table if exists `sys_item_cate`;
 
 create table `sys_item_cate`(
     `name` varchar(64),
@@ -160,6 +186,8 @@ create table `sys_item_cate`(
     `sort` int(11)
 );
 
+drop table if exists `sys_layout`;
+
 create table `sys_layout`(
     `item_id` int(11),
     `loc_id` int(11),
@@ -169,6 +197,8 @@ create table `sys_layout`(
     `sort` int(11)
 );
 
+drop table if exists `sys_layout_desc`;
+
 create table `sys_layout_desc`(
     `name` varchar(64),
     `item_id` int(11),
@@ -177,11 +207,15 @@ create table `sys_layout_desc`(
     `sort` int(11)
 );
 
+drop table if exists `sys_level`;
+
 create table `sys_level`(
     `name` varchar(64),
     `status` int(11),
     `sort` int(11)
 );
+
+drop table if exists `sys_link`;
 
 create table `sys_link`(
     `name` varchar(64),
@@ -196,6 +230,8 @@ create table `sys_link`(
     `sort` int(11)
 );
 
+drop table if exists `sys_login_log`;
+
 create table `sys_login_log`(
     `title` varchar(64),
     `login_name` varchar(64),
@@ -208,6 +244,8 @@ create table `sys_login_log`(
     `type` int(11),
     `msg` varchar(64)
 );
+
+drop table if exists `sys_menu`;
 
 create table `sys_menu`(
     `name` varchar(64),
@@ -223,6 +261,8 @@ create table `sys_menu`(
     `sort` int(11)
 );
 
+drop table if exists `sys_message`;
+
 create table `sys_message`(
     `title` varchar(64),
     `content` varchar(64),
@@ -234,6 +274,8 @@ create table `sys_message`(
     `note` varchar(64)
 );
 
+drop table if exists `sys_message_template`;
+
 create table `sys_message_template`(
     `code` varchar(64),
     `title` varchar(64),
@@ -241,6 +283,8 @@ create table `sys_message_template`(
     `content` varchar(64),
     `status` int(11)
 );
+
+drop table if exists `sys_notice`;
 
 create table `sys_notice`(
     `title` varchar(64),
@@ -254,6 +298,8 @@ create table `sys_notice`(
     `send_time` timestamp
 );
 
+drop table if exists `sys_oper_log`;
+
 create table `sys_oper_log`(
     `title` varchar(64),
     `business_type` int(11),
@@ -263,18 +309,22 @@ create table `sys_oper_log`(
     `oper_num` varchar(64),
     `oper_url` varchar(64),
     `oper_ip` varchar(64),
-    `oper_location` varchar(64)
+    `oper_location` varchar(64),
     `oper_param` varchar(64),
     `json_result` varchar(64),
     `status` int(11),
     `error_msg` varchar(64)
 );
 
+drop table if exists `sys_position`;
+
 create table `sys_position`(
     `name` varchar(64),
     `status` int(11),
     `sort` int(11)
 );
+
+drop table if exists `sys_role`;
 
 create table `sys_role`(
     `name` varchar(64),
@@ -283,15 +333,21 @@ create table `sys_role`(
     `sort` int(11)
 );
 
+drop table if exists `sys_role_dept`;
+
 create table `sys_role_dept`(
     `role_id` int(11),
     `dept_id` int(11)
 );
 
+drop table if exists `sys_role_menu`;
+
 create table `sys_role_menu`(
     `role_id` int(11),
     `menu_id` int(11)
 );
+
+drop table if exists `sys_sms_log`;
 
 create table `sys_sms_log`(
     `mobile` varchar(64),
