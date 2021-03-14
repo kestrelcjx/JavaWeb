@@ -41,20 +41,9 @@
             </dependency>
             <dependency>
                 <groupId>com.kestrelcjx</groupId>
-                <artifactId>javaweb-generator</artifactId>
-                <version>${version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.kestrelcjx</groupId>
-                <artifactId>javaweb-quartz</artifactId>
-                <version>${version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.kestrelcjx</groupId>
                 <artifactId>javaweb-system</artifactId>
                 <version>${version}</version>
             </dependency>
-            
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
