@@ -61,6 +61,7 @@ public class RedisConfig {
      * @param redisTemplate
      * @return
      */
+    @Bean
     public RedisUtils redisUtils(RedisTemplate<String, Object> redisTemplate) {
         RedisUtils redisUtils = new RedisUtils();
         redisUtils.setRedisTemplate(redisTemplate);
