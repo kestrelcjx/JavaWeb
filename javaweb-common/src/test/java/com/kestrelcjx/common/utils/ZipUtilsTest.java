@@ -15,15 +15,16 @@ public class ZipUtilsTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        release();
     }
 
     @Test
     public void testUnzip() {
         URL zip = ZipUtilsTest.class.getClassLoader().getResource("dest.zip");
         ZipUtils.unzip(zip.toString().substring(6), "./");
+        release();
     }
 
-    @Test
     public void release() {
         File file1 = new File("zip");
         File file2 = new File("dest.zip");

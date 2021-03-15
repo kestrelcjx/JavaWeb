@@ -21,8 +21,12 @@ public class ExcelUtilTest {
         List<Object> list = ExcelUtil.readLessThan1000Row(
                 "C:\\Users\\Administrator\\Desktop\\" +
                         "JavaWeb\\javaweb-common\\src\\test\\resources\\excels.xlsx");
+        int count = 0;
         for (Object o : list) {
             System.out.println(o);
+            if(++count >= 10) {
+                break;
+            }
         }
     }
 
