@@ -43,7 +43,7 @@ public class LoginServiceImpl implements ILoginService {
     @Override
     public JsonResult captcha(HttpServletResponse response) {
         VerifyUtils verifyUtil = new VerifyUtils();
-        Map<String, String> result = new HashMap();
+        Map<String, String> result = new HashMap<>();
         try {
             String key = UUID.randomUUID().toString();
             response.setContentType("image/png");

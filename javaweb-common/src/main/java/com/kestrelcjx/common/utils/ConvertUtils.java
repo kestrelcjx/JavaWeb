@@ -484,6 +484,7 @@ public class ConvertUtils {
      * @param defaultValue 转换失败时返回的默认值
      * @return 结果
      */
+    @SuppressWarnings("unchecked")
     public static <E extends Enum<E>> E toEnum(Class<E> clazz, Object value, E defaultValue) {
         if (null == value) {
             return defaultValue;

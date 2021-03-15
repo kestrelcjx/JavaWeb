@@ -144,6 +144,7 @@ public class BaseServiceImpl<M extends BaseMapper<T>, T extends BaseEntity>
      * @return
      */
     @Override
+    @SuppressWarnings("unchecked")
     public JsonResult deleteById(Integer id) {
         if (CommonConfig.appDebug) {
             return JsonResult.error("演示环境禁止操作");
@@ -169,6 +170,7 @@ public class BaseServiceImpl<M extends BaseMapper<T>, T extends BaseEntity>
      * @return
      */
     @Override
+    @SuppressWarnings("unchecked")
     public JsonResult deleteByIds(String ids) {
         if (CommonConfig.appDebug) {
             return JsonResult.error("演示环境禁止操作");

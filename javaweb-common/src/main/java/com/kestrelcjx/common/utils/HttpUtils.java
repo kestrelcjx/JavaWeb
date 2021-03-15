@@ -2,15 +2,12 @@ package com.kestrelcjx.common.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import sun.net.www.protocol.http.HttpURLConnection;
 
 import javax.net.ssl.*;
 import java.io.*;
 import java.net.*;
-import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
 import java.security.cert.CertificateException;
-import java.security.cert.TrustAnchor;
 import java.security.cert.X509Certificate;
 
 /**

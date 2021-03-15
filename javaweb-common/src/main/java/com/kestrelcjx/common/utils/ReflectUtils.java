@@ -16,17 +16,13 @@ public class ReflectUtils {
     private static final String SETTER_PREFIX = "set";
     private static final String GETTER_PREFIX = "get";
     private static final String CGLIB_CLASS_SEPARATOR = "$$";
-    private static Logger logger = LoggerFactory.getLogger(ReflectUtils.class);
+    private static final Logger logger = LoggerFactory.getLogger(ReflectUtils.class);
 
     /**
      * 调用Getter方法
      * 支持多级，如：对象名.对象名.方法
-     *
-     * @param obj
-     * @param propertyName
-     * @param <E>
-     * @return
      */
+    @SuppressWarnings("unchecked")
     public static <E> E invokeGetter(Object obj, String propertyName) {
         Object object = obj;
         for (String name : StringUtils.split(propertyName, ".")) {
@@ -40,11 +36,6 @@ public class ReflectUtils {
     /**
      * 调用Setter方法，仅匹配方法名
      * 支持多级，如：对象名.对象名.方法
-     *
-     * @param obj
-     * @param propertyName
-     * @param value
-     * @param <E>
      */
     public static <E> void invokeSetter(Object obj, String propertyName, E value) {
         Object object = obj;
@@ -62,12 +53,8 @@ public class ReflectUtils {
 
     /**
      * 直接读取对象属性值，无视private/protected修饰符，不经过getter函数
-     *
-     * @param object
-     * @param fieldName
-     * @param <E>
-     * @return
      */
+    @SuppressWarnings("unchecked")
     public static <E> E getFieldValue(final Object object, final String fieldName) {
         Field field = getAccessibleField(object, fieldName);
         if (null == field) {
@@ -86,10 +73,6 @@ public class ReflectUtils {
     /**
      * 循环向上转型，获取对象的DeclaredField，并强制设置为可访问<br>
      * 如向上转型到Object仍无法找到，返回null
-     *
-     * @param object
-     * @param fieldName
-     * @return
      */
     private static Field getAccessibleField(Object object, String fieldName) {
         if (null == object) {
@@ -102,8 +85,7 @@ public class ReflectUtils {
                 Field field = superClass.getDeclaredField(fieldName);
                 makeAccessible(field);
                 return field;
-            } catch (NoSuchFieldException e) {
-                continue;
+            } catch (NoSuchFieldException ignored) {
             }
         }
         return null;
@@ -113,11 +95,8 @@ public class ReflectUtils {
      * 直接调用对象方法，无视private/protected修饰符<br>
      * 用于一次性调用的情况，否则应该使用getAccessibleMethodByName()函数获得Method后反复调用<br>
      * 只匹配函数名，如果有多个同名函数调用第一个<br>
-     *
-     * @param object
-     * @param methodName
-     * @param args
      */
+    @SuppressWarnings("unchecked")
     private static <E> E invokeMethodByName(Object object, String methodName, Object[] args) {
         Method method = getAccessibleMethodByName(object, methodName, args.length);
         if (null == method) {
@@ -162,11 +141,6 @@ public class ReflectUtils {
      * 如向上转型到Object仍无法找到，返回null<br>
      * 只匹配函数名<br>
      * 用于方法需要被多次调用的情况，先使用本函数先取得Method，然后调用Method.invoke(Object obj, Object... args)<br>
-     *
-     * @param object
-     * @param methodName
-     * @param argsNum
-     * @return
      */
     private static Method getAccessibleMethodByName(final Object object, final String methodName,
                                                     final int argsNum) {
@@ -191,14 +165,8 @@ public class ReflectUtils {
      * 直接调用对象方法，无视private/protected修饰符<br>
      * 用于一次性调用的情况，否则应使用getAccessibleMethod()函数获得Method后反复调用<br>
      * 同时匹配方法名+参数类型<br>
-     *
-     * @param object
-     * @param methodName
-     * @param parameterTypes
-     * @param args
-     * @param <E>
-     * @return
      */
+    @SuppressWarnings("unchecked")
     public static <E> E invokeMethod(final Object object, final String methodName,
                                      final Class<?>[] parameterTypes, Object args) {
         if (null == object || null == methodName) {
@@ -239,11 +207,6 @@ public class ReflectUtils {
      * 如向上转型到Object仍无法找到，返回null<br>
      * 匹配函数名+参数类型<br>
      * 用于方法需要被多次调用的情况，先使用本函数先取得Method，然后调用Method.invoke(Object obj, Object.. args)<br>
-     *
-     * @param object
-     * @param methodName
-     * @param parameterTypes
-     * @return
      */
     private static Method getAccessibleMethod(Object object, String methodName, Class<?>[] parameterTypes) {
         if (null == object) {
@@ -257,8 +220,7 @@ public class ReflectUtils {
                 method = searchType.getDeclaredMethod(methodName, parameterTypes);
                 makeAccessible(method);
                 return method;
-            } catch (NoSuchMethodException e) {
-                continue;
+            } catch (NoSuchMethodException ignored) {
             }
         }
         return null;
@@ -266,8 +228,6 @@ public class ReflectUtils {
 
     /**
      * 改变private/protected的方法为public，尽量不调用实际改动的语句，避免JDK的SecurityManager抱怨
-     *
-     * @param method
      */
     private static void makeAccessible(Method method) {
         if ((!Modifier.isPublic(method.getModifiers())
@@ -279,8 +239,6 @@ public class ReflectUtils {
 
     /**
      * 改变privte/protected的成员变量为public，尽量不调用实际改动的语句，避免JDK的SecurityManager抱怨
-     *
-     * @param field
      */
     public static void makeAccessible(Field field) {
         if ((!Modifier.isPublic(field.getModifiers())
@@ -298,6 +256,7 @@ public class ReflectUtils {
      * @param <T>
      * @return
      */
+    @SuppressWarnings("unchecked")
     public static <T> Class<T> getClassGenericType(final Class clazz) {
         return getClassGenericType(clazz, 0);
     }
@@ -305,10 +264,6 @@ public class ReflectUtils {
     /**
      * 通过反射，获得Class定义中声明的父类的泛型参数的类型
      * 如无法找到，返回Object.class
-     *
-     * @param clazz
-     * @param index
-     * @return
      */
     public static Class getClassGenericType(final Class clazz, final int index) {
         Type genType = clazz.getGenericSuperclass();

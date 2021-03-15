@@ -58,6 +58,7 @@ public class UploadUtils {
      * @param name
      * @return
      */
+    @SuppressWarnings("unchecked")
     public Map<String, Object> uploadFile(HttpServletRequest request, String name) {
         // 验证文件并返回错误信息
         String error = this.validateFields(request, name);

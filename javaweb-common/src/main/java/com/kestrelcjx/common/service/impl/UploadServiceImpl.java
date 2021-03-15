@@ -29,6 +29,7 @@ public class UploadServiceImpl implements IUploadService {
      * @return
      */
     @Override
+    @SuppressWarnings("unchecked")
     public JsonResult uploadImage(HttpServletRequest request, String name) {
         UploadUtils uploadUtils = new UploadUtils();
         Map<String, Object> result = uploadUtils.uploadFile(request, name);
@@ -45,6 +46,7 @@ public class UploadServiceImpl implements IUploadService {
      * @return
      */
     @Override
+    @SuppressWarnings("unchecked")
     public JsonResult uploadFile(HttpServletRequest request, String name) {
         uploadUtils.setDirName("files");
         Map<String, Object> result = uploadUtils.uploadFile(request, name);
@@ -65,6 +67,7 @@ public class UploadServiceImpl implements IUploadService {
      * @return
      */
     @Override
+    @SuppressWarnings("unchecked")
     public String kindeditorImage(HttpServletRequest request, String name) {
         UploadUtils uploadUtils = new UploadUtils();
         Map<String, Object> result = uploadUtils.uploadFile(request, name);

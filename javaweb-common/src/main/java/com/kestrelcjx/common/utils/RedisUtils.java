@@ -23,7 +23,6 @@ public class RedisUtils {
     /**
      * 普通缓存获取
      *
-     * @param pattern
      * @return 值
      */
     @Transactional(readOnly = true, propagation = Propagation.REQUIRES_NEW)
@@ -33,10 +32,6 @@ public class RedisUtils {
 
     /**
      * 指定缓存失效时间
-     *
-     * @param key
-     * @param time
-     * @return
      */
     public boolean expire(String key, long time) {
         try {
@@ -82,6 +77,7 @@ public class RedisUtils {
      *
      * @param key 可以传一个或多个值
      */
+    @SuppressWarnings("unchecked")
     public void del(String... key) {
         if (key != null && key.length > 0) {
             if (key.length == 1) {

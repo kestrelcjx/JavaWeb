@@ -250,6 +250,7 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin> implements
      * @return
      */
     @Override
+    @SuppressWarnings("unchecked")
     public JsonResult deleteByIds(String ids) {
         if (CommonConfig.appDebug) {
             return JsonResult.error("演示环境禁止操作");
