@@ -102,12 +102,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
-        <!--极光推送依赖-->
-        <dependency>
-            <groupId>cn.jpush.api</groupId>
-            <artifactId>jpush-client</artifactId>
-            <version>3.3.10</version>
-        </dependency>
         <!--文件压缩、解压缩依赖-->
         <!--JWT依赖-->
         <dependency>
