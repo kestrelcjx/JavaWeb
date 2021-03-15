@@ -5,7 +5,7 @@ import com.kestrelcjx.common.utils.JsonResult;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * 人员角色表 服务类
+ * 文件上传服务类
  */
 public interface IUploadService {
     /**
