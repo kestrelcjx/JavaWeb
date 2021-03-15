@@ -35,34 +35,34 @@ public class ShiroConfig {
     private final String CACHE_KEY = "shiro:cache:";
     private final String SESSION_KEY = "shiro:session:";
     private Integer EXPIRE = 86400 * 7;
-    @Value("this.get{spring().redis.host}")
+    @Value("{spring.redis.host}")
     private String host;
-    @Value("this.get{spring().redis.port}")
+    @Value("{spring.redis.port}")
     private Integer port;
-    @Value("this.get{spring().redis.password}")
+    @Value("{spring.redis.password}")
     private String password;
-    @Value("this.get{spring().redis.timeout}")
+    @Value("{spring.redis.timeout}")
     private Integer timeout;
     // 设置Cookie的域名
-    @Value("this.get{shiro().cookie.domain}")
+    @Value("{shiro.cookie.domain}")
     private String domain;
     // 设置cookie的有效访问路径
-    @Value("this.get{shiro().cookie.path}")
+    @Value("{shiro.cookie.path}")
     private String path;
     // 设置HttpOnly属性
-    @Value("this.get{shiro().cookie.httpOnly}")
+    @Value("{shiro.cookie.httpOnly}")
     private boolean httpOnly;
     // 设置Cookie的过期时间，秒为单位
-    @Value("this.get{shiro().cookie.maxAge}")
+    @Value("{shiro.cookie.maxAge}")
     private int maxAge;
     // 登录地址
-    @Value("this.get{shiro().user.loginUrl}")
+    @Value("{shiro.user.loginUrl}")
     private String loginUrl;
     // 权限认证失败地址
-    @Value("this.get{shiro().user.unauthorizedUrl}")
+    @Value("{shiro.user.unauthorizedUrl}")
     private String unauthorizedUrl;
     // 后台主页地址
-    @Value("this.get{shiro().user.indexUrl}")
+    @Value("{shiro.user.indexUrl}")
     private String indexUrl;
 
     public ShiroConfig() {
