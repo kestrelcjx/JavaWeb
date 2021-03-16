@@ -138,22 +138,6 @@ public class ShiroConfig {
     }
 
     /**
-     * 凭证匹配器（由于我们的密码校验交给Shiro的SimpleAuthenticationInfo进行处理了）
-     * 下面调用了自定义的验证类 这个方法就没有了
-     *
-     * @return
-     */
-    @Bean
-    public HashedCredentialsMatcher hashedCredentialsMatcher() {
-        HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
-        //散列算法：这里使用MD5算法
-        hashedCredentialsMatcher.setHashAlgorithmName("md5");
-        //散列的次数，比如散列两次，相当于md5(md5(""))
-        hashedCredentialsMatcher.setHashIterations(1);
-        return hashedCredentialsMatcher;
-    }
-
-    /**
      * 将自己的验证方式加入容器
      *
      * @return
