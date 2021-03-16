@@ -210,7 +210,7 @@ public class CommonUtils {
             md.update(source);
             StringBuilder builder = new StringBuilder();
             for (byte b : md.digest()) {
-                builder.append(String.format("%02x%", b & 0xff));
+                builder.append(String.format("%02x", b & 0xff));
             }
             return builder.toString();
         } catch (Exception e) {
