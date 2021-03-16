@@ -347,19 +347,4 @@ create table `sys_role_menu`(
     `menu_id` int(11)
 );
 
-drop table if exists `sys_sms_log`;
-
-create table `sys_sms_log`(
-    `mobile` varchar(64),
-    `type` int(11),
-    `content` varchar(64),
-    `sign` varchar(64),
-    `template_code` varchar(64),
-    `params` varchar(64),
-    `biz_id` varchar(64),
-    `code` varchar(64),
-    `message` varchar(64),
-    `status` int(11)
-);
-
 set foreign_key_checks = 1;
